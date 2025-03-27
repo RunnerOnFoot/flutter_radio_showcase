@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'use_cases/radio_button_use_case.dart';
 
-void main() {
-  runApp(const WidgetbookApp());
-}
-
 class WidgetbookApp extends StatelessWidget {
   const WidgetbookApp({super.key});
 
@@ -15,6 +11,7 @@ class WidgetbookApp extends StatelessWidget {
       addons: [
         MaterialThemeAddon(
           themes: [
+            // Light theme
             WidgetbookTheme(
               name: 'Light',
               data: ThemeData(
@@ -22,6 +19,7 @@ class WidgetbookApp extends StatelessWidget {
                 useMaterial3: true,
               ),
             ),
+            // Dark theme
             WidgetbookTheme(
               name: 'Dark',
               data: ThemeData.dark(useMaterial3: true).copyWith(
@@ -34,13 +32,16 @@ class WidgetbookApp extends StatelessWidget {
           ],
         ),
         DeviceFrameAddon(
-          devices: [Devices.ios.iPhone13, Devices.android.samsungGalaxyS20],
+          devices: [
+            Devices.android.samsungGalaxyS20,
+            Devices.ios.iPhone13ProMax,
+          ],
         ),
-        TextScaleAddon(scales: [1.0, 1.2, 1.5]),
+        TextScaleAddon(initialScale: 1.0),
       ],
       directories: [
         WidgetbookCategory(
-          name: 'Form Controls',
+          name: 'From Controls',
           children: [
             WidgetbookComponent(
               name: 'Radio Button',

@@ -8,11 +8,10 @@ class RadioButtonUseCase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Use knobs to control widget properties.
     final radioState = context.knobs.list<RadioButtonState>(
       label: 'State',
       options: RadioButtonState.values,
-      initialOption: RadioButtonState.inactive,
+      initialOption: RadioButtonState.active,
       labelBuilder: (option) => option.name,
     );
 
@@ -51,12 +50,11 @@ class RadioButtonUseCase extends StatelessWidget {
         children: [
           RadioButton(
             state: radioState,
-            // If state is disabled, onTap is null; otherwise we simply log a message.
             onTap:
                 radioState == RadioButtonState.disabled
                     ? null
                     : () =>
-                        debugPrint('Radio Button tapped in $radioState state'),
+                        debugPrint('Radio button tapped on $radioState state'),
             size: size,
             activeColor: activeColor,
             inactiveColor: inactiveColor,
