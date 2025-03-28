@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
+import 'package:widgetbook_workspace/use_cases/labeled_radio_button_use_case.dart';
 import 'use_cases/radio_button_use_case.dart';
 
 class WidgetbookApp extends StatelessWidget {
@@ -47,8 +48,12 @@ class WidgetbookApp extends StatelessWidget {
               name: 'Radio Button',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
+                  name: 'Radio Button Showcase',
                   builder: (context) => radioButtonUseCase(context),
+                ),
+                WidgetbookUseCase(
+                  name: 'Labeled Radio Button Showcase',
+                  builder: (context) => labeledRadioButtonUseCase(context),
                 ),
               ],
             ),
