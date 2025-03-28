@@ -48,7 +48,7 @@ class WidgetbookApp extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => const RadioButtonUseCase(),
+                  builder: (context) => radioButtonUseCase(context),
                 ),
               ],
             ),
